@@ -1,0 +1,394 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  <title>Day1st — 1st. 가장 먼저 찾고, Day1 하루 만에 섭외</title>
+  <meta name="description" content="인플루언서 발굴부터 컨택·미팅까지, Day1st." />
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard/dist/web/variable/pretendardvariable-dynamic-subset.css" />
+  <script src="https://cdn.tailwindcss.com"></script>
+  <script>
+    tailwind.config = {
+      theme: {
+        extend: {
+          fontFamily: {
+            sans: ['"Pretendard Variable"', 'Pretendard', '-apple-system', 'BlinkMacSystemFont', 'system-ui', 'sans-serif'],
+          },
+          colors: {
+            'fc-main': '#fc1c49',
+            'fc-main-light': '#ffe5eb',
+            'fc-sub': '#ffa71b',
+            'fc-gray-1': '#f5f5f5',
+            'fc-gray-2': '#e6e6e6',
+            'fc-dark-1': '#282828',
+          },
+        },
+      },
+    };
+  </script>
+  <style>
+    html, body { font-family: 'Pretendard Variable', Pretendard, -apple-system, BlinkMacSystemFont, system-ui, sans-serif; margin: 0; color: #282828; }
+    .scroll-container {
+      height: 100vh;
+      overflow-y: scroll;
+      scroll-snap-type: y mandatory;
+      scroll-behavior: smooth;
+    }
+    .section {
+      min-height: 100vh;
+      scroll-snap-align: start;
+      scroll-snap-stop: always;
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      padding: 5rem 2rem;
+    }
+    .dot {
+      width: 8px;
+      height: 8px;
+      border-radius: 9999px;
+      background: #e6e6e6;
+      transition: all 0.25s ease;
+    }
+    .dot.active {
+      height: 24px;
+      background: #fc1c49;
+    }
+  </style>
+</head>
+<body class="min-h-full">
+  <div id="scroll" class="scroll-container">
+
+    <!-- Progress dots -->
+    <div class="fixed right-6 top-1/2 z-50 flex -translate-y-1/2 flex-col gap-2" id="dots"></div>
+
+    <!-- Page counter -->
+    <div class="fixed bottom-6 left-6 z-50 font-mono text-xs font-bold text-fc-dark-1/40" id="counter">01 / 11</div>
+
+    <!-- 1. 자기소개 -->
+    <section class="section bg-white">
+      <div class="mx-auto max-w-4xl text-center">
+        <div class="mb-6 inline-block rounded-full bg-fc-gray-1 px-4 py-1.5 text-xs font-bold text-fc-dark-1/60">
+          AX Hackathon 2026
+        </div>
+        <h1 class="mb-4 text-6xl font-extrabold leading-tight tracking-tight md:text-7xl">
+          안녕하세요,<br />
+          <span class="text-fc-main">김예빈</span>입니다
+        </h1>
+        <p class="mt-6 text-xl text-fc-dark-1/70">
+          패스트캠퍼스 · 사업 1팀 · 기획파트
+        </p>
+        <p class="mt-4 text-base text-fc-dark-1/50">
+          <span class="font-bold text-fc-main">&ldquo;김예빈C&rdquo;</span> 로 검색하시면 나옵니다 ㅎㅎ
+        </p>
+      </div>
+    </section>
+
+    <!-- 2. 주제 -->
+    <section class="section bg-fc-main">
+      <div class="mx-auto max-w-4xl text-center text-white">
+        <p class="mb-4 text-sm font-bold uppercase tracking-widest opacity-70">선택 주제</p>
+        <div class="mb-6 text-8xl font-extrabold opacity-30">02</div>
+        <h2 class="text-5xl font-extrabold leading-snug md:text-6xl">
+          인플루언서 강사 자동<br />
+          <span class="underline decoration-white/40 decoration-4 underline-offset-8">발굴·컨택</span>
+        </h2>
+      </div>
+    </section>
+
+    <!-- 3. 문제 정의 -->
+    <section class="section bg-white">
+      <div class="mx-auto max-w-5xl w-full">
+        <p class="mb-4 text-sm font-bold uppercase tracking-widest text-fc-main">문제 정의</p>
+        <h2 class="mb-12 text-4xl font-extrabold leading-tight md:text-5xl">현재 기획자의 하루</h2>
+        <div class="grid gap-6 md:grid-cols-3">
+          <div class="rounded-2xl border-2 border-fc-gray-2 bg-white p-6 transition hover:border-fc-main">
+            <p class="mb-4 font-mono text-xs font-bold text-fc-main">01</p>
+            <h3 class="text-xl font-extrabold leading-snug">트렌드는 너무 빨리 바뀐다</h3>
+            <p class="mt-3 text-sm leading-relaxed text-fc-dark-1/70">어제 뜬 이름이 오늘은 과거. 새 인물은 경쟁사가 먼저 잡아버린다.</p>
+          </div>
+          <div class="rounded-2xl border-2 border-fc-gray-2 bg-white p-6 transition hover:border-fc-main">
+            <p class="mb-4 font-mono text-xs font-bold text-fc-main">02</p>
+            <h3 class="text-xl font-extrabold leading-snug">주제는 하나, 강사는 한정적</h3>
+            <p class="mt-3 text-sm leading-relaxed text-fc-dark-1/70">같은 풀에서 섭외 전쟁. 우리가 원하는 사람을 남들도 원한다.</p>
+          </div>
+          <div class="rounded-2xl border-2 border-fc-gray-2 bg-white p-6 transition hover:border-fc-main">
+            <p class="mb-4 font-mono text-xs font-bold text-fc-main">03</p>
+            <h3 class="text-xl font-extrabold leading-snug">발굴·컨택 전부 수작업</h3>
+            <p class="mt-3 text-sm leading-relaxed text-fc-dark-1/70">유튜브 뒤지고, 시트 정리하고, 메일 쓰고. 카테고리 1개 = 2~3일.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 4. 기획자 VOC -->
+    <section class="section bg-fc-gray-1">
+      <div class="mx-auto max-w-5xl w-full">
+        <p class="mb-4 text-sm font-bold uppercase tracking-widest text-fc-main">기획자 VOC</p>
+        <h2 class="mb-12 text-4xl font-extrabold leading-tight md:text-5xl">&ldquo;무엇이 가장 필요할까?&rdquo;</h2>
+        <div class="grid gap-4 md:grid-cols-2">
+          <div class="rounded-2xl border border-fc-gray-2 bg-white p-6">
+            <div class="mb-3 flex items-center gap-2">
+              <span class="flex h-8 w-8 items-center justify-center rounded-full bg-fc-main text-sm font-extrabold text-white">1</span>
+              <span class="text-xs font-bold text-fc-dark-1/40">WISH</span>
+            </div>
+            <p class="text-lg font-extrabold leading-snug">카테고리별로 티어를 확실히 정해서</p>
+            <p class="mt-1 text-sm text-fc-dark-1/60">그 티어에 맞게 리스트가 정리됐으면</p>
+          </div>
+          <div class="rounded-2xl border border-fc-gray-2 bg-white p-6">
+            <div class="mb-3 flex items-center gap-2">
+              <span class="flex h-8 w-8 items-center justify-center rounded-full bg-fc-main text-sm font-extrabold text-white">2</span>
+              <span class="text-xs font-bold text-fc-dark-1/40">WISH</span>
+            </div>
+            <p class="text-lg font-extrabold leading-snug">요즘 뜨고 있는 콘텐츠를 만드는 분</p>
+            <p class="mt-1 text-sm text-fc-dark-1/60">에게 자동으로 알람이 오면</p>
+          </div>
+          <div class="rounded-2xl border border-fc-gray-2 bg-white p-6">
+            <div class="mb-3 flex items-center gap-2">
+              <span class="flex h-8 w-8 items-center justify-center rounded-full bg-fc-main text-sm font-extrabold text-white">3</span>
+              <span class="text-xs font-bold text-fc-dark-1/40">WISH</span>
+            </div>
+            <p class="text-lg font-extrabold leading-snug">주제에 맞는 강의 기획을 바로 해서</p>
+            <p class="mt-1 text-sm text-fc-dark-1/60">메일을 바로 보낼 수 있으면</p>
+          </div>
+          <div class="rounded-2xl border border-fc-gray-2 bg-white p-6">
+            <div class="mb-3 flex items-center gap-2">
+              <span class="flex h-8 w-8 items-center justify-center rounded-full bg-fc-main text-sm font-extrabold text-white">4</span>
+              <span class="text-xs font-bold text-fc-dark-1/40">WISH</span>
+            </div>
+            <p class="text-lg font-extrabold leading-snug">전사적으로 누가 이미 컨택했는지</p>
+            <p class="mt-1 text-sm text-fc-dark-1/60">확인해서 중복 컨택을 피할 수 있으면</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 5. Day1st 소개 -->
+    <section class="section bg-fc-main">
+      <div class="mx-auto max-w-5xl text-center text-white">
+        <p class="mb-4 text-sm font-bold uppercase tracking-widest opacity-70">Solution</p>
+        <h2 class="text-7xl font-extrabold tracking-tight md:text-9xl">Day1st</h2>
+        <p class="mt-8 text-2xl font-bold leading-snug md:text-3xl">
+          <span class="opacity-70">1st.</span> 가장 먼저 찾고,<br />
+          <span class="opacity-70">Day1.</span> 하루 만에 섭외합니다
+        </p>
+        <p class="mt-6 text-base opacity-80">인플루언서 발굴부터 컨택·미팅까지, Day1st.</p>
+      </div>
+    </section>
+
+    <!-- 6. 4대 기능 -->
+    <section class="section bg-white">
+      <div class="mx-auto max-w-6xl w-full">
+        <p class="mb-4 text-sm font-bold uppercase tracking-widest text-fc-main">핵심 기능 · 생산성 증대</p>
+        <h2 class="mb-10 text-4xl font-extrabold leading-tight md:text-5xl">
+          구현한 것 <span class="text-fc-main">4가지</span>
+        </h2>
+        <div class="grid gap-5 md:grid-cols-2">
+          <div class="group flex flex-col rounded-2xl border-2 border-fc-gray-2 bg-white p-7 transition hover:border-fc-main hover:shadow-lg">
+            <p class="mb-3 font-mono text-xs font-bold text-fc-main">01</p>
+            <h3 class="text-2xl font-extrabold leading-snug">키워드 티어별 인플루언서</h3>
+            <p class="mt-3 flex-1 text-sm leading-relaxed text-fc-dark-1/70">
+              키워드 입력하면 1 / 1.5 / 2 / 2.5 티어로 자동 정리. 각 영상 클릭 시 유튜브 원본 바로 확인.
+            </p>
+          </div>
+
+          <div class="group flex flex-col rounded-2xl border-2 border-fc-gray-2 bg-white p-7 transition hover:border-fc-main hover:shadow-lg">
+            <p class="mb-3 font-mono text-xs font-bold text-fc-main">02</p>
+            <h3 class="text-2xl font-extrabold leading-snug">바로 컨택 메일 전송</h3>
+            <p class="mt-3 flex-1 text-sm leading-relaxed text-fc-dark-1/70">
+              영상 괜찮으면 바로 컨택 페이지 → AI 개인화 메일 생성 → 편집 → Gmail로 실발송.
+            </p>
+          </div>
+
+          <div class="group flex flex-col rounded-2xl border-2 border-fc-gray-2 bg-white p-7 transition hover:border-fc-main hover:shadow-lg">
+            <p class="mb-3 font-mono text-xs font-bold text-fc-main">03</p>
+            <h3 class="text-2xl font-extrabold leading-snug">답장 오면 Slack 즉시 알림</h3>
+            <p class="mt-3 flex-1 text-sm leading-relaxed text-fc-dark-1/70">
+              INBOX 10초 폴링. 답변 수신되면 Slack DM으로 자동 알림. 메일 수시로 여는 습관을 없앤다.
+            </p>
+          </div>
+
+          <div class="group flex flex-col rounded-2xl border-2 border-fc-gray-2 bg-white p-7 transition hover:border-fc-main hover:shadow-lg">
+            <p class="mb-3 font-mono text-xs font-bold text-fc-main">04</p>
+            <h3 class="text-2xl font-extrabold leading-snug">미팅 캘린더 인비 자동 전송</h3>
+            <p class="mt-3 flex-1 text-sm leading-relaxed text-fc-dark-1/70">
+              UI 안에서 날짜·시간 입력 → Google Calendar 이벤트 자동 생성 + 참석자 초대 + Meet 링크.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 7. 추가 기능 -->
+    <section class="section bg-fc-gray-1">
+      <div class="mx-auto max-w-5xl w-full">
+        <p class="mb-4 text-sm font-bold uppercase tracking-widest text-fc-main">추가 기능</p>
+        <h2 class="mb-10 text-4xl font-extrabold leading-tight md:text-5xl">그 외에도</h2>
+        <div class="grid gap-5 md:grid-cols-2">
+          <div class="rounded-2xl bg-white p-8">
+            <div class="mb-4 text-4xl">⚡</div>
+            <h3 class="text-2xl font-extrabold">트렌드 연사 자동 알림</h3>
+            <p class="mt-3 text-sm leading-relaxed text-fc-dark-1/70">
+              저장된 키워드로 <b>조회수 10,000+</b> 영상이 올라오면 <b>Slack 자동 감지</b>. 신규 인플루언서를 경쟁사보다 먼저.
+            </p>
+          </div>
+          <div class="rounded-2xl bg-white p-8">
+            <div class="mb-4 text-4xl">📋</div>
+            <h3 class="text-2xl font-extrabold">컨택 연사 DB</h3>
+            <p class="mt-3 text-sm leading-relaxed text-fc-dark-1/70">
+              Day1st으로 컨택한 연사는 <b>전사 기록</b>으로 남는다. 중복 컨택을 UI 단계에서 <b>사전 차단</b>.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 8. 그래서 뭐가 좋아졌나 -->
+    <section class="section bg-white">
+      <div class="mx-auto max-w-4xl w-full">
+        <p class="mb-4 text-sm font-bold uppercase tracking-widest text-fc-main">그래서 뭐가 좋아졌나</p>
+        <h2 class="mb-10 text-4xl font-extrabold leading-tight md:text-5xl">
+          정리하면 <span class="text-fc-main">5줄</span>
+        </h2>
+        <ul class="space-y-4 text-xl leading-relaxed">
+          <li class="flex items-start gap-3">
+            <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-fc-main text-xs font-extrabold text-white">1</span>
+            <span class="font-semibold">유튜브 맨날 뒤지던 걸 한 화면에</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-fc-main text-xs font-extrabold text-white">2</span>
+            <span class="font-semibold">메일·미팅 잡는 걸 다른 페이지 안 넘어가고</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-fc-main text-xs font-extrabold text-white">3</span>
+            <span class="font-semibold">답장 오면 늦지 않게 바로 알림</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-fc-main text-xs font-extrabold text-white">4</span>
+            <span class="font-semibold">새 인플루언서 등장 시 즉시 감지</span>
+          </li>
+          <li class="flex items-start gap-3">
+            <span class="flex h-7 w-7 shrink-0 items-center justify-center rounded-full bg-fc-main text-xs font-extrabold text-white">5</span>
+            <span class="font-semibold">전사 중복 컨택 사전 차단</span>
+          </li>
+        </ul>
+      </div>
+    </section>
+
+    <!-- 9. 실무 적용 시나리오 -->
+    <section class="section bg-fc-gray-1">
+      <div class="mx-auto max-w-5xl w-full">
+        <p class="mb-4 text-sm font-bold uppercase tracking-widest text-fc-main">실무 적용 시나리오</p>
+        <h2 class="mb-10 text-4xl font-extrabold leading-tight md:text-5xl">
+          기획자의 <span class="text-fc-main">월요일</span>
+        </h2>
+        <div class="space-y-5">
+          <div class="flex gap-6 rounded-2xl bg-white p-5">
+            <div class="w-32 shrink-0">
+              <p class="font-mono text-sm font-bold text-fc-main">09:00</p>
+              <p class="mt-0.5 text-xs text-fc-dark-1/50">출근 직후</p>
+            </div>
+            <p class="text-base font-semibold leading-relaxed">Slack에 주말 새로 감지된 신규 후보 3건 알림 대기 중. 확인만 하면 끝.</p>
+          </div>
+          <div class="flex gap-6 rounded-2xl bg-white p-5">
+            <div class="w-32 shrink-0">
+              <p class="font-mono text-sm font-bold text-fc-main">09:30 ~ 10:00</p>
+              <p class="mt-0.5 text-xs text-fc-dark-1/50">리서치</p>
+            </div>
+            <p class="text-base font-semibold leading-relaxed">새 카테고리 키워드 입력 → 티어별 리스트 10분 안에 확보.</p>
+          </div>
+          <div class="flex gap-6 rounded-2xl bg-white p-5">
+            <div class="w-32 shrink-0">
+              <p class="font-mono text-sm font-bold text-fc-main">10:00 ~ 11:00</p>
+              <p class="mt-0.5 text-xs text-fc-dark-1/50">컨택</p>
+            </div>
+            <p class="text-base font-semibold leading-relaxed">상위 3~5명 대상 개인화 메일 Day1st에서 바로 발송.</p>
+          </div>
+          <div class="flex gap-6 rounded-2xl bg-white p-5">
+            <div class="w-32 shrink-0">
+              <p class="font-mono text-sm font-bold text-fc-main">14:00</p>
+              <p class="mt-0.5 text-xs text-fc-dark-1/50">실시간 대응</p>
+            </div>
+            <p class="text-base font-semibold leading-relaxed">답장 온 분들 Slack으로 즉시 파악. 미팅 잡을 거 캘린더 확정.</p>
+          </div>
+          <div class="flex gap-6 rounded-2xl bg-fc-main p-5 text-white">
+            <div class="w-32 shrink-0">
+              <p class="font-mono text-sm font-bold opacity-80">17:00</p>
+              <p class="mt-0.5 text-xs opacity-70">퇴근</p>
+            </div>
+            <p class="text-base font-semibold leading-relaxed">원래 2~3일 걸리던 워크로드가 하루 만에 완결.</p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 10. 확장 가능성 -->
+    <section class="section bg-white">
+      <div class="mx-auto max-w-5xl w-full">
+        <p class="mb-4 text-sm font-bold uppercase tracking-widest text-fc-main">확장 가능성</p>
+        <h2 class="mb-10 text-4xl font-extrabold leading-tight md:text-5xl">여기서 멈추지 않는다</h2>
+        <div class="grid gap-5 md:grid-cols-3">
+          <div class="rounded-2xl border-2 border-fc-gray-2 p-6 transition hover:border-fc-main">
+            <div class="mb-3 text-xs font-bold text-fc-dark-1/40">EXPANSION 01</div>
+            <h3 class="text-xl font-extrabold">카테고리별 티어 커스터마이즈</h3>
+            <p class="mt-3 text-sm leading-relaxed text-fc-dark-1/70">
+              지금은 테크 기준. 팀별·영역별(AI 생산성, 일러스트, 플라워 등)로 <b>각각 다른 티어 기준</b> 설정.
+            </p>
+          </div>
+          <div class="rounded-2xl border-2 border-fc-gray-2 p-6 transition hover:border-fc-main">
+            <div class="mb-3 text-xs font-bold text-fc-dark-1/40">EXPANSION 02</div>
+            <h3 class="text-xl font-extrabold">타 SNS 확장</h3>
+            <p class="mt-3 text-sm leading-relaxed text-fc-dark-1/70">
+              YouTube · LinkedIn · Threads · Instagram 까지. 채널별 팬덤 지수 통합.
+            </p>
+          </div>
+          <div class="rounded-2xl border-2 border-fc-gray-2 p-6 transition hover:border-fc-main">
+            <div class="mb-3 text-xs font-bold text-fc-dark-1/40">EXPANSION 03</div>
+            <h3 class="text-xl font-extrabold">DM 컨택 지원</h3>
+            <p class="mt-3 text-sm leading-relaxed text-fc-dark-1/70">
+              메일뿐 아니라 <b>인스타 / 링크드인 DM</b> 으로도 컨택 가능하게. 강사가 실제로 자주 쓰는 채널에서.
+            </p>
+          </div>
+        </div>
+      </div>
+    </section>
+
+    <!-- 11. 마무리 -->
+    <section class="section bg-fc-main">
+      <div class="mx-auto max-w-4xl text-center text-white">
+        <p class="mb-8 text-7xl font-extrabold tracking-tight md:text-8xl">Day1st</p>
+        <p class="text-2xl font-bold leading-snug md:text-3xl">
+          <span class="opacity-70">1st.</span> 가장 먼저 찾고,<br />
+          <span class="opacity-70">Day1.</span> 하루 만에 섭외합니다
+        </p>
+        <a href="https://day1st-demo.vercel.app" target="_blank" rel="noopener noreferrer"
+           class="mt-12 inline-block rounded-full border-2 border-white/40 bg-white/10 px-8 py-3 font-mono text-lg font-bold backdrop-blur transition hover:bg-white/20">
+          day1st-demo.vercel.app
+        </a>
+        <p class="mt-16 text-lg opacity-80">감사합니다.</p>
+      </div>
+    </section>
+  </div>
+
+  <script>
+    const TOTAL = 11;
+    const dotsEl = document.getElementById('dots');
+    const counter = document.getElementById('counter');
+    const scroll = document.getElementById('scroll');
+
+    for (let i = 0; i < TOTAL; i++) {
+      const d = document.createElement('div');
+      d.className = 'dot' + (i === 0 ? ' active' : '');
+      dotsEl.appendChild(d);
+    }
+    const dots = dotsEl.querySelectorAll('.dot');
+
+    scroll.addEventListener('scroll', () => {
+      const idx = Math.round(scroll.scrollTop / window.innerHeight);
+      const clamped = Math.min(Math.max(idx, 0), TOTAL - 1);
+      dots.forEach((d, i) => d.classList.toggle('active', i === clamped));
+      counter.textContent = String(clamped + 1).padStart(2, '0') + ' / ' + String(TOTAL).padStart(2, '0');
+    }, { passive: true });
+  </script>
+</body>
+</html>
